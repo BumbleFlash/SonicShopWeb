@@ -13,12 +13,12 @@
 }
 
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 12px;
-  line-height: 30px;
-  color: #777;
-  background: #4CAF50;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 12px;
+	line-height: 30px;
+	color: #999;
+	background: #4CAF50;
 }
 
 .container {
@@ -107,7 +107,7 @@ fieldset {
 }
 
 #contact button[type="submit"]:hover {
-  background: #43A047;
+  background: #999;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;

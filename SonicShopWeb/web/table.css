@@ -3,7 +3,7 @@
 body {
   background-color: #3e94ec;
   font-family: "Roboto", helvetica, arial, sans-serif;
-  alignment-adjust:central
+  alignment-adjust:central;
   font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;

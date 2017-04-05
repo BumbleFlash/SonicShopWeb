@@ -22,7 +22,7 @@
         
     
       <fieldset>
-      <button name="Update Old Entry" type="submit" style="color:#FFF" style="background:#999" style="background-color:#666" style="color:#039">Update Old Entry</button>
+      <button name="Update Old Entry" type="submit" style="color:#FFF" style="background:#999" style="background-color:#666" style="color:#039" onclick="javascrpit:window.location.href='table.jsp';return false;">Update Old Entry</button>
     </fieldset>
     
   </form>

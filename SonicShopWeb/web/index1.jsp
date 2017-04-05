@@ -34,7 +34,12 @@
     <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
     </fieldset>
     
+    <fieldset>
+    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onclick="javascrpit:window.location.href='selection.jsp';return false;">Home</button>
+    </fieldset>
+    
   </form>
+
   <% try
          {
              
@@ -43,15 +48,19 @@
              String picurl= request.getParameter("picurl");
              String cname= request.getParameter("category");
              int i=0;
-             ResultSet rs;
+             ResultSet rs,rs1;
              Class.forName("com.mysql.jdbc.Driver");
              Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/products","root","pammas");
              Statement s= con.createStatement();
              rs= s.executeQuery("Select * from product");
-             while (rs.next()==true)
-             {
-             i++;
-             }
+//             while (rs.next()==true)
+//             {
+//             i++;
+//             }
+//             i++;
+             rs.last();
+             if(rs.last())
+             i=Integer.parseInt(rs.getString("product_id"));
              i++;
              
              String q="INSERT INTO PRODUCT VALUES('"+pname+"',"+i+",'"+picurl+"',"+price+",'"+cname+"');";

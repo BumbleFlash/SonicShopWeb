@@ -4,6 +4,9 @@ body {
   background-color: #3e94ec;
   font-family: "Roboto", helvetica, arial, sans-serif;
   alignment-adjust:central;
+  align-content: center;
+  align-items: center;
+  align-self: center;
   font-size: 16px;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -169,4 +172,32 @@ button[type="submit"]:hover {
 
 button[type="submit"]:active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#column { 
+    background: #F9F9F9;
+  padding: 5px;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 12px;
+        
+    align-content: center;
+}
+
+#contact {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    
+  background: #F9F9F9;
+  padding: 5px;
+ 
+ width: 400px;
+ height: 50px;
+ max-width: 400px;
+ max-height: 200px;
+ margin-left: 550px;
+ margin-top: 50px;
 }

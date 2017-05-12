@@ -32,6 +32,7 @@
            json.put("Picurl",rs.getString("Picurl"));
            json.put("Price",rs.getString("Price"));
            
+           
             StringWriter out1 = new StringWriter();
         json.writeJSONString(out1);
         jarray.add(json);
@@ -50,6 +51,6 @@
     }
     catch(Exception e)
     {
-        outn.println(e);
+        outn.println(e.getMessage());
     }
     %>

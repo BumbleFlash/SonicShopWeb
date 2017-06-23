@@ -36,8 +36,12 @@
                Class.forName("com.mysql.jdbc.Driver");
                 Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/products","root","pammas");
              Statement s= con.createStatement();
-             ResultSet rs;
-             rs= s.executeQuery("Select * from product");
+             ResultSet rs,rs1;
+             String admin="";
+             rs1=s.executeQuery("Select * from temp");
+             if(rs1.next())
+                 admin=rs1.getString("admin");
+             rs= s.executeQuery("Select * from product where admin_name='"+admin+"'");
              while(rs.next())
              {
                 %>
@@ -57,7 +61,7 @@
                 }
                 catch(Exception e)
                 {
-                    out.println("Fag");
+                    out.println(e.getMessage());
                 }
                 %>
 </tbody>

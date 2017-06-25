@@ -37,7 +37,7 @@ PrintWriter outn= response.getWriter();
       
        
        
-       rs= st.executeQuery("Select * from cart"+uid);
+       rs= st.executeQuery("Select * from cart"+uid+" where order_detail='JUST_ADDED'");
        while(rs.next())
        {
            JSONObject json= new JSONObject();

@@ -47,6 +47,7 @@
              Double price= Double.parseDouble(request.getParameter("price"));
              String picurl= request.getParameter("picurl");
              String cname= request.getParameter("category");
+             String admin="";
              int i=0;
              ResultSet rs,rs1;
              Class.forName("com.mysql.jdbc.Driver");
@@ -62,8 +63,12 @@
              if(rs.last())
              i=Integer.parseInt(rs.getString("product_id"));
              i++;
-             
-             String q="INSERT INTO PRODUCT VALUES('"+pname+"',"+i+",'"+picurl+"',"+price+",'"+cname+"');";
+             rs1=s.executeQuery("Select * from temp");
+             if(rs1.next())
+             {
+                 admin= rs1.getString("admin");
+             }
+             String q="INSERT INTO PRODUCT VALUES('"+pname+"',"+i+",'"+picurl+"',"+price+",'"+cname+"','"+admin+"');";
              
              s.executeUpdate(q);
              out.println("Inserted");

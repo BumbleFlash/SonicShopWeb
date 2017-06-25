@@ -19,7 +19,7 @@ try
 {int i=0;
     JSONObject json= new JSONObject(request.getParameter("cart"));
     Class.forName("com.mysql.jdbc.Driver");  
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/products?" + "user=root&password=pammas");
+       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/products?" + "user=root&password=pammas");
        Statement st= con.createStatement();
        ResultSet rs,rs2;
        String pname= json.get("ProductName").toString();
@@ -32,7 +32,7 @@ try
        {
        int uid= Integer.parseInt(rs.getString("uid"));
        
-       rs2= st.executeQuery("Select * from cart"+uid+" where ProductName='"+pname+"'");
+       rs2= st.executeQuery("Select * from cart"+uid+" where ProductName='"+pname+"'and order_history=0");
        while(rs2.next())
        {
                i= Integer.parseInt(rs2.getString("quantity"));
@@ -48,7 +48,7 @@ try
           
        if(!rs2.next())
        {
-       String insert= "Insert into cart"+uid+" values('"+pname+"','',"+price+","+q+")";
+       String insert= "Insert into cart"+uid+" values('"+pname+"','',"+price+","+q+",'JUST_ADDED',0)";
        st.executeUpdate(insert);
        }
        }              

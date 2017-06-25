@@ -69,12 +69,12 @@ int uid=0;
           ResultSet rs2;
           rs2= d.getTables(null,null,"cart"+uid,null);
           String create;
-          if(!rs.next())
+          if(!rs2.next())
           {
               
        
        //out.println(uname+uemail+upass);
-       create= "Create table cart" + uid +"(ProductName varchar(100), Picurl varchar(300), Price decimal(7,0), Quantity int(10)) ";
+       create= "Create table cart" + uid +"(ProductName varchar(100), Picurl varchar(300), Price decimal(7,0), Quantity int(10),Order_detail VARCHAR(45),Order_history int(10))";
        st.executeUpdate(create);
           }
        String q= "Insert into users values("+uid+",'"+uname+"','"+uemail+"','"+upass+"');";

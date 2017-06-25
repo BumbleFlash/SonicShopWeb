@@ -92,14 +92,19 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
              Class.forName("com.mysql.jdbc.Driver");
              Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/products","root","pammas");
              Statement s= con.createStatement();
+             s.executeUpdate("Delete from temp");
              rs= s.executeQuery("Select * from admin;");
+
              while(rs.next())
              {
                  n=rs.getString("Username");
                  p=rs.getString("Password");
                  if(name.equals(n)&&pass.equals(p))
                  {
+                     
                      response.sendRedirect("selection.jsp");
+                     s.executeUpdate("Insert into temp values('"+name+"')");
+                     
                  }
                  else
                      
@@ -115,7 +120,8 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
             
             catch(Exception e)
             {
-                
+            
+               
             }
               
             
